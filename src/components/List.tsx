@@ -35,6 +35,7 @@ export default function List() {
 
   function handleDelete(id: number) {
     deleteTodo(id);
+    setIsEditing(false);
   }
 
   function handleChangeStatus(id: number) {
@@ -42,7 +43,7 @@ export default function List() {
   }
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    setValue(event.target.value);
+    setValue(event.target.value);    
   }
 
   function handleSubmit(event: FormEvent) {
@@ -50,6 +51,7 @@ export default function List() {
     if (todoUpdate?.id) {
       updateTodo(todoUpdate.id, value);
       setValue("");
+      setIsEditing(false);
     }
   }
 
