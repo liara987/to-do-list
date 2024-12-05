@@ -1,7 +1,9 @@
-export default function Button() {
-    return (
-        <>
-            <button>Add</button>  
-        </>
-    )
+import { ButtonProps } from "../@types/todo";
+
+export default function Button({ text, ...props }: ButtonProps) {
+  return (
+    <>
+      <button {...props}>{text}</button>
+    </>
+  );
 }

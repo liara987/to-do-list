@@ -1,16 +1,30 @@
-import './App.css'
-import Input from './components/Input'
-import Button from './components/Button'
-import Header from './components/Header'
+import "./App.css";
+import Header from "./components/Header";
+import SubHeader from "./components/SubHeader";
+import List from "./components/List";
+import FormCreate from "./components/FormCreate";
 
-function App() {  
+import { TodoProvider } from "./context/TodoContext";
+
+function App() {
   return (
-    <>           
-      <Header/>   
-      <Input/>       
-      <Button/>   
+    <>
+      <TodoProvider>
+        <div className="header-area">
+          <Header title="Lista de Tarefas" />
+          <SubHeader subtitle="Crie uma tarefa a baixo" />
+        </div>
+
+        <div className="add-area">
+          <FormCreate />
+        </div>
+
+        <div className="list-area">
+          <List />
+        </div>
+      </TodoProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
